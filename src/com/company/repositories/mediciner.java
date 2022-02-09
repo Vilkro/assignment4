@@ -39,7 +39,7 @@ public class mediciner implements medlist {
     }
 
     @Override
-    public boolean createMedicine(Medicine company) {
+    public boolean addMedicine(Medicine company) {
         Connection con = null;
         try {
             con = db.getConnection();

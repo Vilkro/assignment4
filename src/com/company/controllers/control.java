@@ -13,10 +13,10 @@ public class control {
         this.repo = repo;
     }
 
-    public String createMedicine(String name, double price, Date expDate, String manufacturer) {
+    public String addMedicine(String name, double price, Date expDate, String manufacturer) {
         Medicine medicine = new Medicine(name, price, expDate, manufacturer);
 
-        boolean created = repo.createMedicine(medicine);
+        boolean created = repo.addMedicine(medicine);
 
         return (created ? "Medicine was created" : "Medicine creation was failed");
     }
@@ -33,15 +33,6 @@ public class control {
         return(medicines == null ? "Medicine was not found" : medicines.toString());
     }
 
-    public String getAllMedicines() {
-        List<Medicine> medicines = repo.getAllMedicines();
-        if(medicines.size() == 0){
-            return "Medicines was not found. Please add new medicine.";
-        } else {
-            return medicines.toString();
-        }
-    }
-
     public String deleteMedicineById(int id){
         boolean deleted = repo.removeMedicineById(id);
 
@@ -51,5 +42,14 @@ public class control {
     public void createTable(){
         boolean created = repo.createTable();
         System.out.println(created ? "Table medicine created successfully" : "Table creation error");
+    }
+
+    public String getAllMedicines() {
+        List<Medicine> medicines = repo.getAllMedicines();
+        if(medicines.size() == 0){
+            return "Medicines were not found. Please add new medicine.";
+        } else {
+            return medicines.toString();
+        }
     }
 }

@@ -18,13 +18,12 @@ public class Interface {
     public void launch() {
         while (true) {
             System.out.println();
-            System.out.println("Welcome to My Application");
             System.out.println("Select option:");
-            System.out.println("1. Get all medicines");
+            System.out.println("1. Get medicine by name");
             System.out.println("2. Get medicine by id");
-            System.out.println("3. Get medicine by name");
+            System.out.println("3. Create new medicine");
             System.out.println("4. Remove medicine by id");
-            System.out.println("5. Create new medicine");
+            System.out.println("5. Get medicines list");
             System.out.println("0. Exit");
             System.out.println();
             try {
@@ -32,15 +31,15 @@ public class Interface {
                 int option = scanner.nextInt();
                 switch (option) {
                     case 1:
-                        getMedAll();
+                        getMedByName();
                     case 2:
                         getMedById();
                     case 3:
-                        getMedByName();
+                        addMed();
                     case 4:
                         removeMed();
                     case 5:
-                        createMenu();
+                        getMedAll();
                     default:
                         break;
                 }
@@ -80,7 +79,7 @@ public class Interface {
         System.out.println(temp);
     }
 
-    public void createMenu(){
+    public void addMed(){
         System.out.println("Please enter name");
         String name = scanner.next();
         System.out.println("Please enter price");
@@ -89,7 +88,7 @@ public class Interface {
         Date date = Date.valueOf(scanner.next());
         System.out.println("Please enter manufacturer");
         String manufacturer = scanner.next();
-        String temp = controller.createMedicine(name, price, date, manufacturer);
+        String temp = controller.addMedicine(name, price, date, manufacturer);
         System.out.println(temp);
     }
 }
