@@ -70,11 +70,11 @@ public class Medicine {
     @Override
     public String toString() {
         return "Medicine{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", date='" + date + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", price=" + getPrice() +
+                ", date='" + getDate() + '\'' +
+                ", manufacturer='" + getManufacturer() + '\'' +
                 '}';
     }
 }

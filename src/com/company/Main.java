@@ -12,7 +12,7 @@ public class Main {
         IDB db = new postgresql();
         medlist repo = new mediciner(db);
         control controller = new control(repo);
-        Interface app = new Interface(controller);
+        Layer app = new Layer(controller);
         app.launch();
     }
 }
